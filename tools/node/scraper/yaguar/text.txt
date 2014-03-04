@@ -1,0 +1,1091 @@
+<!--src=home.asp-->
+<html>
+<head>
+
+<title>MAYORISTA YAGUAR - ARGENTINA</title>
+	<link rel="shortcut icon" href="favicon.ico" type="favicon.ico"/>
+<!-- METAS -->
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-Language" content="es" />
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<meta http-equiv="expires" content="0" />
+<meta name="robots" content="index, follow" />
+<meta name="distribution" content="global" />
+<meta name="rating" content="GENERAL" />
+<meta name="Revisit" content="30 days"/>
+<!-- CSSs -->
+<link rel="shortcut icon" href="favicon.ico" />
+<link href="../css/global.css" rel="stylesheet" type="text/css"/>
+<link href="../css/layout.css" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" type="text/css" media="all" href="../css/jScrollPane.css" />
+<link rel="stylesheet" href="../css/tooltipjs.css" media="screen, projection" />
+<link rel="stylesheet" href="styles/nyroModal.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/estilos_web.css">
+<link rel="stylesheet" href="../css/estilos.css">
+<link rel="stylesheet" href="../css/global.css">
+<link rel="stylesheet" href="../css/layout.css">
+
+<!-- SCRIPTS -->
+
+<script type="text/javascript" src="js/search_panel.js"></script>
+
+<script type="text/javascript" src="js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="js/topMenu.js"></script>
+<script type="text/javascript" src="js/tooltipjs.js"></script>
+<script type="text/javascript" src="js/jquery.timer.js"></script>
+<script type="text/javascript" src="js/jquery.nyroModal.custom.min.js"></script>
+<script type="text/javascript" src="js/jquery.nyroModal-ie6.min.js"></script>
+<script type="text/javascript" src="js/jquery.autobox.js"></script>
+<script src="js/jquery.anythingslider.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="js/chili-1.7.pack.js"></script>
+<script type="text/javascript" src="js/jquery.cycle.all.js"></script>
+
+
+
+
+
+<script language="javascript">
+	function RemoveItemCarrito(nIdProduct) {
+		if (confirm("Est� seguro que desea eliminar este item del carrito?")) {
+			frmShoppingCart.IdProducto.value = nIdProduct;
+			frmShoppingCart.action.value = "remove";
+			frmShoppingCart.submit();
+//		setTimeout("if(document.getElementById('mostrando').value == 'iframe_CompraRapida.asp'||document.getElementById('mostrando').value == 'iframe_Detalle_carrito.asp'){CargarIframeContenido(document.getElementById('mostrando').value);}",100);
+			
+		}
+	}
+	function sumarItem(nIdProduct,cantidad) {
+		if (cantidad == '') cantidad = 1			
+		frmShoppingCart.IdProducto.value = nIdProduct;
+		frmShoppingCart.hidCantidad.value = cantidad;
+		frmShoppingCart.action.value = "sumarItem";
+
+		frmShoppingCart.submit();
+//		setTimeout("if(document.getElementById('mostrando').value == 'iframe_CompraRapida.asp'||document.getElementById('mostrando').value == 'iframe_Detalle_carrito.asp'){CargarIframeContenido(document.getElementById('mostrando').value);}",100);
+		
+	}
+		
+	function restarItem(nIdProduct,cantidad) {
+		if (cantidad == '') cantidad = 1
+		frmShoppingCart.IdProducto.value = nIdProduct;
+		frmShoppingCart.hidCantidad.value = cantidad;
+		frmShoppingCart.action.value = "restarItem";
+			
+		frmShoppingCart.submit();
+		//setTimeout("if(document.getElementById('mostrando').value=='iframe_CompraRapida.asp'||document.getElementById('mostrando').value== 'iframe_Detalle_carrito.asp'){CargarIframeContenido(document.getElementById('mostrando').value);}",100);
+			}
+	function reloadCarrito() {
+		frmShoppingCart.IdProducto.value = ""
+		frmShoppingCart.hidCantidad.value = "";
+		frmShoppingCart.action.value = "";		
+		frmShoppingCart.submit();
+	}
+
+</script>
+<script type="text/javascript">
+ /*
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-5121924-15']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  */
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="javascript" src="../../common/lib/paginacion_front.js"></script>
+<script language="javascript">
+			function ResizeIframeContenido() { //********** GENERICA **********
+				SacarAguardeUnInstante();
+				if (navigator.appName.toLowerCase()!='netscape'){
+						
+						//alert(ifrContenido.document.body.scrollHeight);
+						document.getElementById("ifrContenido").height=ifrContenido.document.body.scrollHeight;
+						document.getElementById("ifrContenido").width =ifrContenido.document.body.scrollWidth;		
+						
+				}else{
+						document.getElementById("ifrContenido").height=2500;
+				}
+				
+				window.setTimeout(resize,3000);
+			}					
+			
+			function resize(){
+				document.getElementById("ifrContenido").height=ifrContenido.document.body.scrollHeight
+				document.getElementById("ifrContenido").width =ifrContenido.document.body.scrollWidth;		
+			}
+			
+			
+			function PonerAguardeUnInstante() {
+				return;
+				
+				//document.all("tabAguardeUnInstante").style.display = "inline";
+				//document.all("ifrContenido").height = 0 ;
+				
+				document.getElementById("tabAguardeUnInstante").style.display = "inline";
+				document.getElementById("ifrContenido").height = 0 ;
+				
+				
+				
+				//window.frames("ifrContenido").document.location.href = window.frames("ifrContenido").document.location.href + "#";
+				document.location.href = (document.location.href + "#").replace("##","#");
+			}
+			
+			function SacarAguardeUnInstante() {
+				//document.all("tabAguardeUnInstante").style.display = "none";			
+				document.getElementById("tabAguardeUnInstante").style.display = "none";			
+			}		
+			
+			function CargarIframeContenido(sPage) {				
+
+				try {  //Por si quedo abierto el layer
+					//document.all('divLayer').style.display = 'none';
+					document.getElementById('divLayer').style.display = 'none';
+				} catch(e) {}				
+
+				//PonerAguardeUnInstante();
+				document.getElementById('mostrando').value = sPage;
+				//ifrContenido.document.location.href = sPage;
+				setTimeout("ifrContenido.document.location.href = document.getElementById('mostrando').value",100);
+				//window.frames("ifrContenido").document.location.href = sPage ;
+				//window.navigate("#");
+			}	
+		</script>
+</head>
+
+<body>
+
+<div align="center" style="position:relative;">	
+
+<script language="javascript">
+			function PasarDatosToPopUp() {
+				
+				//nWidth	= window.frames("ifrLayerContenido").document.body.scrollWidth;
+				//nHeight	= window.frames("ifrLayerContenido").document.body.scrollHeight;				
+				if (navigator.appName.toLowerCase()!='netscape'){
+						nWidth	= window.frames("ifrLayerContenido").document.body.scrollWidth;
+						nHeight	= window.frames("ifrLayerContenido").document.body.scrollHeight;		
+
+				}else{
+						nWidth = 600;
+						nHeight = 400
+				}
+
+				nLeft = Math.round((document.body.clientWidth-nWidth) / 2);		
+
+				if (nHeight <= 400)
+				{
+				nTop	=  Math.round((2*document.body.scrollTop + document.body.clientHeight - nHeight ) / 2);
+				} else
+				{
+					nTop =  Math.round((2*document.body.scrollTop + document.body.clientHeight - 400 ) / 2)-200;
+				}
+					
+
+				document.getElementById("divLayerContenido").innerHTML = ifrLayerContenido.document.body.innerHTML;
+								
+				if (navigator.appName.indexOf("Explorer") != -1) nLeft =  -Math.round(nWidth / 2);
+				//if (navigator.appName.indexOf("Explorer") != -1 && ifrLayerContenido.document.body.scrollWidth >= 800) nLeft = - (document.body.clientWidth-ifrLayerContenido.document.body.scrollWidth)/2;
+				if (navigator.appName.indexOf("Netscape") != -1) nLeft=(document.body.clientWidth-ifrLayerContenido.document.body.scrollWidth)/2;
+								
+				if (navigator.appName.indexOf("Explorer") != -1 && ifrLayerContenido.document.body.scrollWidth >= 800) nTop = nTop-200
+				
+				//alert(ifrLayerContenido.document.body.scrollWidth);
+				document.getElementById("divLayer").style.top = nTop;
+				//document.getElementById("divLayer").style.left = (document.body.clientWidth-ifrLayerContenido.document.body.scrollWidth)/2;
+
+
+				
+				//alert('Left' + nLeft);
+				document.getElementById("divLayer").style.left = nLeft + 'px';
+								
+				
+				//alert(document.getElementById("divLayer").style.left);
+				
+				
+				document.getElementById("divLayer").style.display = 'inline';
+				
+			}
+
+			function OpenPopUpLayer(sPopUpPage) {
+				try {
+					window.frames("ifrContenido").document.getElementById("divFlashHome").style.display = "none"; //Por si est� el flash ejecut�ndose
+					//window.ifrContenido.document.getElementById("divFlashHome").style.display = "none"; //Por si est� el flash ejecut�ndose
+				} catch(e) {
+					//alert('error=>'+e);
+				}
+				
+				ifrLayerContenido.document.location.href = sPopUpPage;
+				//window.frames("ifrLayerContenido").document.location.href = sPopUpPage;
+			}						
+			
+			
+</script>
+
+
+<iframe width="1" height="1" marginheight="0" marginwidth="0" frameborder="0" name="ifrLayerContenido" scrolling="no"></iframe>
+<div id="divLayer" STYLE="display:none; position:absolute;top:10px;z-index=999999999999999999999999999999999999999999999999999999999;">
+	<table border="0" cellspacing="0" cellpadding="1">
+		<tr bgcolor="#FFFFFF"> 
+			<td>
+				<table border="0" cellspacing="0" cellpadding="0">
+					
+          <tr bgcolor="#5D5D5D"> 
+            <td background="../gfx/fondo_popup.gif"> 
+              <table width="100%" border="0" cellspacing="0" cellpadding="0">
+								<tr> 
+									
+                  <td width="100%">&nbsp;</td>
+									
+                  <td width="0" height="0"> <!--a href="javascript:document.getElementById('divLayer').style.display = 'none';"--> 
+                    <img src="../gfx/ventana_btn_cerrar.gif" width="65" height="21" border="0" onClick="if(document.getElementById('mostrando').value == 'iframe_CompraRapida.asp'){CargarIframeContenido(document.getElementById('mostrando').value);};document.getElementById('divLayer').style.display = 'none'" onMouseOver="this.style.cursor = 'hand'"> 
+                    <!--/a--> </td>
+								</tr>
+							</table>
+							
+              <div id="divLayerContenido"></div>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+</div><!--src=home.asp-->
+<script language="javascript">
+	function ChangeSucursal(parIdSucursal) {
+		
+		if (!(parIdSucursal == '')) {
+			
+			
+				  window.parent.document.location.href = "index.asp?IdSucursal=" + parIdSucursal;
+			
+		}	
+	}
+</script>
+
+
+<div class="Top">
+	<div class="Top_top">
+		<h1><a href="index.asp">Mayorista Yaguar</a></h1>
+		
+		
+			<div class="Registrarse">
+				<p><a href="javascript:CargarIframeContenido('Iframe_Registracion.asp');">Reg&iacute;strese</a> | <a href="javascript:CargarIframeContenido('Iframe_OlvideMiClave.asp');">Olvid&eacute; mi clave</a></p>                
+				<form action="../../common/asp/login.asp" method="post">
+					<fieldset>                 
+						<p>
+							<label>Usuario:</label>
+							<input type="text" name="Login" />
+						</p>
+						<p>
+							<label>Clave:</label>
+							<input type="password" class="clave" name="Password" />
+							<input type="submit" class="Enviar" value=" " />
+						</p>
+		                <p>
+							<input class="pc" type="checkbox" name="Recordame" value="1" /><label class="pc">Recordarme en esta PC</label>
+						</p>
+		                 </fieldset>
+				</form>
+			</div>
+		
+		<div class="Social">
+        	<p class="idioma"><a href="../../frontendEN/asp/index.asp">ENGLISH</a></p>
+			<h3>seguinos en:</h3>
+			<p><a href="http://es-la.facebook.com/pages/Yaguar-Supermercados-Mayoristas-SA/139224246090642" target="_blank"><img src="../gfx/ico_fb.jpg" alt="Facebook" /></a></p>
+			<p class="Fecha">04/03/2014</p>
+		</div>
+	</div>
+	<div class="Nav">
+		<ul>
+			<li class="home"><a href="index.asp">HOME</a></li>
+			<li class="empresa"><a href="javascript:CargarIframeContenido('iframe_Empresa.asp');">EMPRESA</a></li>
+			<li class="marcas"><a href="javascript:CargarIframeContenido('iframe_Marcas.asp');">MARCAS</a></li>
+			<li class="novedades"><a href="javascript:CargarIframeContenido('iframe_Novedades.asp');">NOVEDADES</a></li>
+			<li class="proveedores"><a href="javascript:CargarIframeContenido('iframe_Proveedores.asp');">PROVEEDORES</a></li>
+			<li class="comercio"><a href="javascript:CargarIframeContenido('iframe_Comercioexterior.asp');">COMERCIO EXTERIOR</a></li>
+             <li class="rrhh"><a href="http://200.123.159.173/CV_Alta1.asp?source=1" target="_blank">RRHH</a></li>
+		  <li class="contacto"><a href="javascript:CargarIframeContenido('iframe_Contactenos.asp?IdSector=1');">OPINIONES Y SUGERENCIAS</a></li>
+		</ul>
+	</div>
+</div>
+
+<input type="hidden" name="mostrando" id="mostrando">
+
+ <div class="Info">
+ 	<div class="Home">
+	<p class="top"></p>
+        <div class="Contenido">
+ <table width="100%" border="0" cellspacing="0" cellpadding="0" height="100%" align="center">
+  <tr valign="top">
+   <td><table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+     <tr valign="top">
+      <td height="100%" width="200" align="center" style="padding-top:7px;">
+<table width="200" border="0" cellspacing="0" cellpadding="0" height="100%" style="margin-left:15px;">
+  <tr valign="top" align="center"> 
+    <td height="100%">
+      
+
+<script language="javascript">
+	function OpenCloseDeptos(nIdDepto) {
+	//alert(document.getElementById('tdCategorias' + nIdDepto).innerHTML == false);
+		if (document.getElementById('tdCategorias' + nIdDepto).innerHTML == false) { // Abrir:			
+		//alert('a');
+			//Cierro todos:
+			for (i=0;i<=document.getElementById("hidIdDepto").length-1;i++) {
+				//alert(document.getElementById("hidIdDepto"));
+				document.getElementById('imgBulletDepto' + document.getElementById("hidIdDepto")[i].value).src = '../gfx/bullet_01_azul.gif';
+				document.getElementById('tdCategorias' + document.getElementById("hidIdDepto")[i].value).innerHTML = '';			
+			}					
+			
+			document.location.href = (document.location.href + '#').replace("##","#");		
+		
+			document.getElementById("refDepto" + nIdDepto).style.cursor = "wait";
+			document.getElementById("tabAguardeBotonera" + nIdDepto).style.display = "inline";
+			
+			document.getElementById('imgBulletDepto' + nIdDepto).src = '../gfx/bullet_01_downazul.gif';
+			//window.frames("ifraBotoneraIzq").location.href = '../inc/inc_iframe_botonera_izq.asp?IdDepto=' + nIdDepto;
+			
+			ifraBotoneraIzq.location.href = '../inc/inc_iframe_botonera_izq.asp?IdDepto=' + nIdDepto;
+			
+			
+		} else { // Cerrar:
+			document.getElementById('imgBulletDepto' + nIdDepto).src = '../gfx/bullet_01_azul.gif';
+			document.getElementById('tdCategorias' + nIdDepto).innerHTML = '';
+		}
+	}
+</script>
+
+<table width="155" border="0" cellspacing="0" cellpadding="0" align="center">
+	<tr> 
+		<td><a href="javascript:CargarIframeContenido('iframe_contenidohome.asp');"><img src="../gfx/tit_gondolas.jpg" width="200" height="35" border="0"></a></td>
+  </tr>
+	
+  <tr valign="top"> 
+    <td> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF" style="border-bottom: 1px solid #CCC; border-left: 1px solid #CCC; border-right: 1px solid #CCC;">
+				<tr valign="top"> 
+					<td> 
+					
+						<!-- vvv OFERTAS ESPECIALES vvv -->
+						<table width="100%" border="0" cellspacing="2" cellpadding="0" class="botgon">
+							<tr> 
+								
+                <td width="10"> <img src="../gfx/bullet_01_azul.gif" width="19" height="14"></td>
+								<td></td>
+								
+                <td width="100%"> 
+                	<!--a href="javascript:CargarIframeContenido('iframe_ListadoDeProductos.asp?TipoOferta=Ofertones');"--> 
+                	<a href="javascript:CargarIframeContenido('iframe_contenidohome.asp');"> 
+                	
+                  <img src="../gfx/ofertones.gif" width="83" height="15" border="0" style="margin-top:5px"></a></td>
+						  </tr>
+						</table>
+						<table width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tr>
+								<td></td>
+							</tr>
+						</table>
+						<!-- ^^^ OFERTAS ESPECIALES ^^^ -->
+						
+			
+						<iframe name="ifraBotoneraIzq" width="0" height="0" frameborder="0" marginheight="0" marginwidth="0"></iframe>						
+				
+						<!-- vvv DEPARTAMENTOS vvv -->
+
+						<!-- CARNICERIA solo en Tigre Avellaneda Cordoba Neuquen SanteFe y Rosario -->
+						
+						
+						<table width="100%" border="0" cellspacing="2" cellpadding="0" class="botgon">
+							<tr> 
+								<td width="10">
+									<img src="../gfx/bullet_01_azul.gif" name="imgBulletDepto1" width="19" height="14" id="imgBulletDepto1">
+						    </td>
+								<td><img src="../gfx/inv.gif" width="1" height="1"></td>
+								<td width="100%">
+									<a href="javascript:OpenCloseDeptos(1);" id="refDepto1">
+										Almacen
+									</a>
+								</td>
+							</tr>
+						</table>
+						
+						<input name="hidIdDepto" id="hidIdDepto" type="hidden" value="1" style="display:inline">
+						<table width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tr valign="top"> 
+								<td id="tdCategorias1">
+								</td>
+							</tr>
+						</table>
+
+						<table id="tabAguardeBotonera1" style="display:none" width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tr valign="top"> 
+								<td>
+									
+                  <table width="100%" border="0" cellspacing="3" cellpadding="0" class="subgon">
+                    <tr> 
+											<td></td>
+											<td></td>
+											<td width="100%">
+												Aguarde un Instante...			
+											</td>
+										</tr>
+									</table>								
+								</td>
+							</tr>
+						</table>
+						
+												
+						<table width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tr> 
+								<td></td>
+							</tr>
+						</table>
+						
+						<!-- ^^^ DEPARTAMENTOS ^^^ -->
+				
+						<!-- vvv DEPARTAMENTOS vvv -->
+
+						<!-- CARNICERIA solo en Tigre Avellaneda Cordoba Neuquen SanteFe y Rosario -->
+						
+						
+						<table width="100%" border="0" cellspacing="2" cellpadding="0" class="botgon">
+							<tr> 
+								<td width="10">
+									<img src="../gfx/bullet_01_azul.gif" name="imgBulletDepto2" width="19" height="14" id="imgBulletDepto2">
+						    </td>
+								<td><img src="../gfx/inv.gif" width="1" height="1"></td>
+								<td width="100%">
+									<a href="javascript:OpenCloseDeptos(2);" id="refDepto2">
+										Bebidas
+									</a>
+								</td>
+							</tr>
+						</table>
+						
+						<input name="hidIdDepto" id="hidIdDepto" type="hidden" value="2" style="display:inline">
+						<table width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tr valign="top"> 
+								<td id="tdCategorias2">
+								</td>
+							</tr>
+						</table>
+
+						<table id="tabAguardeBotonera2" style="display:none" width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tr valign="top"> 
+								<td>
+									
+                  <table width="100%" border="0" cellspacing="3" cellpadding="0" class="subgon">
+                    <tr> 
+											<td></td>
+											<td></td>
+											<td width="100%">
+												Aguarde un Instante...			
+											</td>
+										</tr>
+									</table>								
+								</td>
+							</tr>
+						</table>
+						
+												
+						<table width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tr> 
+								<td></td>
+							</tr>
+						</table>
+						
+						<!-- ^^^ DEPARTAMENTOS ^^^ -->
+				
+						<!-- vvv DEPARTAMENTOS vvv -->
+
+						<!-- CARNICERIA solo en Tigre Avellaneda Cordoba Neuquen SanteFe y Rosario -->
+						
+						
+						<table width="100%" border="0" cellspacing="2" cellpadding="0" class="botgon">
+							<tr> 
+								<td width="10">
+									<img src="../gfx/bullet_01_azul.gif" name="imgBulletDepto3" width="19" height="14" id="imgBulletDepto3">
+						    </td>
+								<td><img src="../gfx/inv.gif" width="1" height="1"></td>
+								<td width="100%">
+									<a href="javascript:OpenCloseDeptos(3);" id="refDepto3">
+										Limpieza
+									</a>
+								</td>
+							</tr>
+						</table>
+						
+						<input name="hidIdDepto" id="hidIdDepto" type="hidden" value="3" style="display:inline">
+						<table width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tr valign="top"> 
+								<td id="tdCategorias3">
+								</td>
+							</tr>
+						</table>
+
+						<table id="tabAguardeBotonera3" style="display:none" width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tr valign="top"> 
+								<td>
+									
+                  <table width="100%" border="0" cellspacing="3" cellpadding="0" class="subgon">
+                    <tr> 
+											<td></td>
+											<td></td>
+											<td width="100%">
+												Aguarde un Instante...			
+											</td>
+										</tr>
+									</table>								
+								</td>
+							</tr>
+						</table>
+						
+												
+						<table width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tr> 
+								<td></td>
+							</tr>
+						</table>
+						
+						<!-- ^^^ DEPARTAMENTOS ^^^ -->
+				
+						<!-- vvv DEPARTAMENTOS vvv -->
+
+						<!-- CARNICERIA solo en Tigre Avellaneda Cordoba Neuquen SanteFe y Rosario -->
+						
+						
+						<table width="100%" border="0" cellspacing="2" cellpadding="0" class="botgon">
+							<tr> 
+								<td width="10">
+									<img src="../gfx/bullet_01_azul.gif" name="imgBulletDepto4" width="19" height="14" id="imgBulletDepto4">
+						    </td>
+								<td><img src="../gfx/inv.gif" width="1" height="1"></td>
+								<td width="100%">
+									<a href="javascript:OpenCloseDeptos(4);" id="refDepto4">
+										Perfumer�a
+									</a>
+								</td>
+							</tr>
+						</table>
+						
+						<input name="hidIdDepto" id="hidIdDepto" type="hidden" value="4" style="display:inline">
+						<table width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tr valign="top"> 
+								<td id="tdCategorias4">
+								</td>
+							</tr>
+						</table>
+
+						<table id="tabAguardeBotonera4" style="display:none" width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tr valign="top"> 
+								<td>
+									
+                  <table width="100%" border="0" cellspacing="3" cellpadding="0" class="subgon">
+                    <tr> 
+											<td></td>
+											<td></td>
+											<td width="100%">
+												Aguarde un Instante...			
+											</td>
+										</tr>
+									</table>								
+								</td>
+							</tr>
+						</table>
+						
+												
+						<table width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tr> 
+								<td></td>
+							</tr>
+						</table>
+						
+						<!-- ^^^ DEPARTAMENTOS ^^^ -->
+				
+						<!-- vvv DEPARTAMENTOS vvv -->
+
+						<!-- CARNICERIA solo en Tigre Avellaneda Cordoba Neuquen SanteFe y Rosario -->
+						
+						
+						<table width="100%" border="0" cellspacing="2" cellpadding="0" class="botgon">
+							<tr> 
+								<td width="10">
+									<img src="../gfx/bullet_01_azul.gif" name="imgBulletDepto5" width="19" height="14" id="imgBulletDepto5">
+						    </td>
+								<td><img src="../gfx/inv.gif" width="1" height="1"></td>
+								<td width="100%">
+									<a href="javascript:OpenCloseDeptos(5);" id="refDepto5">
+										Bazar
+									</a>
+								</td>
+							</tr>
+						</table>
+						
+						<input name="hidIdDepto" id="hidIdDepto" type="hidden" value="5" style="display:inline">
+						<table width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tr valign="top"> 
+								<td id="tdCategorias5">
+								</td>
+							</tr>
+						</table>
+
+						<table id="tabAguardeBotonera5" style="display:none" width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tr valign="top"> 
+								<td>
+									
+                  <table width="100%" border="0" cellspacing="3" cellpadding="0" class="subgon">
+                    <tr> 
+											<td></td>
+											<td></td>
+											<td width="100%">
+												Aguarde un Instante...			
+											</td>
+										</tr>
+									</table>								
+								</td>
+							</tr>
+						</table>
+						
+												
+						<table width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tr> 
+								<td></td>
+							</tr>
+						</table>
+						
+						<!-- ^^^ DEPARTAMENTOS ^^^ -->
+				
+						<!-- vvv DEPARTAMENTOS vvv -->
+
+						<!-- CARNICERIA solo en Tigre Avellaneda Cordoba Neuquen SanteFe y Rosario -->
+						
+						
+						<table width="100%" border="0" cellspacing="2" cellpadding="0" class="botgon">
+							<tr> 
+								<td width="10">
+									<img src="../gfx/bullet_01_azul.gif" name="imgBulletDepto6" width="19" height="14" id="imgBulletDepto6">
+						    </td>
+								<td><img src="../gfx/inv.gif" width="1" height="1"></td>
+								<td width="100%">
+									<a href="javascript:OpenCloseDeptos(6);" id="refDepto6">
+										Frescos
+									</a>
+								</td>
+							</tr>
+						</table>
+						
+						<input name="hidIdDepto" id="hidIdDepto" type="hidden" value="6" style="display:inline">
+						<table width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tr valign="top"> 
+								<td id="tdCategorias6">
+								</td>
+							</tr>
+						</table>
+
+						<table id="tabAguardeBotonera6" style="display:none" width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tr valign="top"> 
+								<td>
+									
+                  <table width="100%" border="0" cellspacing="3" cellpadding="0" class="subgon">
+                    <tr> 
+											<td></td>
+											<td></td>
+											<td width="100%">
+												Aguarde un Instante...			
+											</td>
+										</tr>
+									</table>								
+								</td>
+							</tr>
+						</table>
+						
+												
+						<table width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tr> 
+								<td></td>
+							</tr>
+						</table>
+						
+						<!-- ^^^ DEPARTAMENTOS ^^^ -->
+				
+						<!-- vvv DEPARTAMENTOS vvv -->
+
+						<!-- CARNICERIA solo en Tigre Avellaneda Cordoba Neuquen SanteFe y Rosario -->
+						
+						
+						<table width="100%" border="0" cellspacing="2" cellpadding="0" class="botgon">
+							<tr> 
+								<td width="10">
+									<img src="../gfx/bullet_01_azul.gif" name="imgBulletDepto7" width="19" height="14" id="imgBulletDepto7">
+						    </td>
+								<td><img src="../gfx/inv.gif" width="1" height="1"></td>
+								<td width="100%">
+									<a href="javascript:OpenCloseDeptos(7);" id="refDepto7">
+										Kiosco
+									</a>
+								</td>
+							</tr>
+						</table>
+						
+						<input name="hidIdDepto" id="hidIdDepto" type="hidden" value="7" style="display:inline">
+						<table width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tr valign="top"> 
+								<td id="tdCategorias7">
+								</td>
+							</tr>
+						</table>
+
+						<table id="tabAguardeBotonera7" style="display:none" width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tr valign="top"> 
+								<td>
+									
+                  <table width="100%" border="0" cellspacing="3" cellpadding="0" class="subgon">
+                    <tr> 
+											<td></td>
+											<td></td>
+											<td width="100%">
+												Aguarde un Instante...			
+											</td>
+										</tr>
+									</table>								
+								</td>
+							</tr>
+						</table>
+						
+												
+						<table width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tr> 
+								<td></td>
+							</tr>
+						</table>
+						
+						<!-- ^^^ DEPARTAMENTOS ^^^ -->
+				
+						<!-- vvv DEPARTAMENTOS vvv -->
+
+						<!-- CARNICERIA solo en Tigre Avellaneda Cordoba Neuquen SanteFe y Rosario -->
+						
+						
+						<table width="100%" border="0" cellspacing="2" cellpadding="0" class="botgon">
+							<tr> 
+								<td width="10">
+									<img src="../gfx/bullet_01_azul.gif" name="imgBulletDepto8" width="19" height="14" id="imgBulletDepto8">
+						    </td>
+								<td><img src="../gfx/inv.gif" width="1" height="1"></td>
+								<td width="100%">
+									<a href="javascript:OpenCloseDeptos(8);" id="refDepto8">
+										Mascotas
+									</a>
+								</td>
+							</tr>
+						</table>
+						
+						<input name="hidIdDepto" id="hidIdDepto" type="hidden" value="8" style="display:inline">
+						<table width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tr valign="top"> 
+								<td id="tdCategorias8">
+								</td>
+							</tr>
+						</table>
+
+						<table id="tabAguardeBotonera8" style="display:none" width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tr valign="top"> 
+								<td>
+									
+                  <table width="100%" border="0" cellspacing="3" cellpadding="0" class="subgon">
+                    <tr> 
+											<td></td>
+											<td></td>
+											<td width="100%">
+												Aguarde un Instante...			
+											</td>
+										</tr>
+									</table>								
+								</td>
+							</tr>
+						</table>
+						
+												
+						<table width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tr> 
+								<td></td>
+							</tr>
+						</table>
+						
+						<!-- ^^^ DEPARTAMENTOS ^^^ -->
+				
+						<!-- vvv DEPARTAMENTOS vvv -->
+
+						<!-- CARNICERIA solo en Tigre Avellaneda Cordoba Neuquen SanteFe y Rosario -->
+						
+						
+						<table width="100%" border="0" cellspacing="2" cellpadding="0" class="botgon">
+							<tr> 
+								<td width="10">
+									<img src="../gfx/bullet_01_azul.gif" name="imgBulletDepto11" width="19" height="14" id="imgBulletDepto11">
+						    </td>
+								<td><img src="../gfx/inv.gif" width="1" height="1"></td>
+								<td width="100%">
+									<a href="javascript:OpenCloseDeptos(11);" id="refDepto11">
+										Librer�a
+									</a>
+								</td>
+							</tr>
+						</table>
+						
+						<input name="hidIdDepto" id="hidIdDepto" type="hidden" value="11" style="display:inline">
+						<table width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tr valign="top"> 
+								<td id="tdCategorias11">
+								</td>
+							</tr>
+						</table>
+
+						<table id="tabAguardeBotonera11" style="display:none" width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tr valign="top"> 
+								<td>
+									
+                  <table width="100%" border="0" cellspacing="3" cellpadding="0" class="subgon">
+                    <tr> 
+											<td></td>
+											<td></td>
+											<td width="100%">
+												Aguarde un Instante...			
+											</td>
+										</tr>
+									</table>								
+								</td>
+							</tr>
+						</table>
+						
+						
+						<!-- ^^^ DEPARTAMENTOS ^^^ -->
+							
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	
+  <tr> 
+    <td></td>
+	</tr>
+</table> <br>
+      <img src="../gfx/img_mapa.jpg" width="200" height="366" border="0" usemap="#Map52346">
+<map name="Map52346">
+<area title="Autopista" shape="circle" coords="70,160,7" href="javascript:CargarIframeContenido('iframe_Autopista.asp#e');" />
+	<area title="Sucursal Santa Fe" alt="Santa Fe" shape="circle" coords="77,106,9" href="javascript:CargarIframeContenido('iframe_sucursalSantaFe.asp#f');" />
+	<area title="Sucursal Chaco" shape="circle" coords="89,84,9" href="javascript:CargarIframeContenido('iframe_SucursalesChaco.asp#f');" />
+	<area title="Sucursal Mendoza"	shape="circle" coords="27,178,9" href="javascript:CargarIframeContenido('iframe_SucursalesMendoza.asp#e');" />
+	<area title="Sucursal Bah�a Blanca" shape="circle" coords="72,187,7" href="javascript:CargarIframeContenido('iframe_Sucursalesbahiablanca.asp#e');">
+	<area title="Campana" shape="circle" coords="79,143,8" href="javascript:CargarIframeContenido('iframe_SucursalesCampana.asp#a1');">
+	<area title="Moreno" shape="circle" coords="95,146,8" href="javascript:CargarIframeContenido('iframe_SucursalesMoreno.asp#a1');">
+	<area title="Sucursal Jos� C. Paz" shape="circle" coords="87,162,7" href="javascript:CargarIframeContenido('iframe_SucursalesjoseCpaz.asp#a1');">
+	<area title="Sucursal C�rdoba" shape="circle" coords="54,127,7" href="javascript:CargarIframeContenido('iframe_sucursalescordoba.asp#c');">
+	<area title="Sucursal Tigre"  shape="circle" coords="104,161,7" href="javascript:CargarIframeContenido('iframe_SucursalesTigre.asp#c');">
+	<area title="Sucursal Neuqu�n" shape="circle" coords="19,201,8" href="javascript:CargarIframeContenido('iframe_sucursalesneuquen.asp#d');">
+	<area title="Sucursal Salta" shape="circle" coords="47,66,7" href="javascript:CargarIframeContenido('iframe_sucursalesSalta.asp#d');">
+	<area title="Sucursal Mar del Plata" shape="circle" coords="105,180,7" href="javascript:CargarIframeContenido('iframe_MardelPlata.asp#b');">
+	<area title="Sucursal San Juan" shape="circle" coords="33,154,8" href="javascript:CargarIframeContenido('iframe_SanJuan.asp#d');">
+</map>
+<br><br>
+                <a href="http://200.123.159.173/CV_Alta1.asp?source=1" target="_blank"><img src="../gfx/img_trabajeconNosotros.jpg" width="200" height="153" border="0" /></a>
+      <br><br>
+      <img src="../gfx/img_servicioalCliente.jpg" width="200" height="120" usemap="#MapMap" border="0">
+<map name="MapMap">
+  <area shape="rect" coords="10,48,187,99" href="javascript:CargarIframeContenido('iframe_Contactenos.asp#a');">
+</map>
+<br>
+<br>
+<img src="../gfx/img_ayudaOnline.jpg" width="200" height="174" usemap="#Map" border="0">
+<map name="Map"><area shape="rect" coords="11,132,184,164" href="javascript:CargarIframeContenido('iframe_ComoComprar.asp');"><area shape="rect" coords="11,88,185,121" href="javascript:CargarIframeContenido('iframe_Contactenos.asp?IdSector=9');"></map><br>
+      <br>
+       
+	</td>
+  </tr>
+</table>
+</td>
+      <td height="100%" width="545" align="center">
+      <div style=" padding-top:8px;">
+      <img src="../gfx/img_topContCent.jpg" width="545" height="10"/></div>
+      <table width="545" border="0" cellspacing="0" cellpadding="0" height="100%" class="ContCentro" bgcolor="#FFFFFF">
+        <tr valign="top">
+         <td height="100%" width="100%"><table id="tabAguardeUnInstante" style="display:none" width="100%" height="400">
+           <tr>
+            <td align="center"><img src="../Gfx/loading.gif" width="400" height="100" style="border:none" border="0" align="absmiddle"> </td>
+           </tr>
+          </table>
+          <iframe name="ifrContenido" id="ifrContenido" src="iframe_Marcas.asp" onLoad="//Tiene problemas de sincronismo.this.style.height = ifrContenido.document.body.scrollHeight + 5;" width="538" height="895" frameborder="0" marginheight="0" marginwidth="0" scrolling="no" vspace="0" hspace="0"></iframe></td>
+        </tr>
+       </table></td>
+      <td height="100%" width="200" align="center"><!--src=home.asp-->
+<script src="Scripts/AC_RunActiveContent.js" type="text/javascript"></script>
+<script>
+function BuscarDer() {
+		//alert(parent.frames);
+	    //parent.frames("frmMain").CargarIframeContenido("iframe_ListadoDeProductos.asp?txtBusqueda="+frmBusqueda.txtBusqueda.value);
+		parent.CargarIframeContenido("iframe_ListadoDeProductos.asp?txtBusqueda="+frmBusquedaDer.txtBusqueda.value+'&tipoBusqueda=nombremarca');
+
+		return false;
+	}
+function setHomepage() {
+//Condition to set home page in IE
+if (document.all) {
+document.body.style.behavior = 'url(#default#homepage)';
+document.body.setHomePage('http://www.yaguar.com');
+}
+//Condition to set home page in Mozilla
+else if (window.sidebar) {
+if (window.netscape) {
+try {
+netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+}
+catch (e) {
+alert("this action was aviod by your browser,if you want to enable,please enter about:config in your address line,and change the value of signed.applets.codebase_principal_support to true");
+}
+}
+var prefs = Components.classes['@mozilla.org/preferences-service;1'].getService(Components.interfaces.nsIPrefBranch);
+prefs.setCharPref('browser.startup.homepage', 'http://www.aspdotnet-suresh.com');
+}
+}
+</script>
+
+<table width="160" border="0" cellspacing="0" cellpadding="0" height="100%">
+                <tr valign="top">
+                  
+    <td height="100%" width="200"> 
+      <table width="200" border="0" cellspacing="0" cellpadding="0">
+                      <tr valign="top">
+                      		<td height="100%" width="149">
+
+
+            <img src="../gfx/inv.gif" width="9" height="9"/><br>                          
+  			 <div class="Buscar">
+			 <form name="frmBusquedaDer" class="buscador" method="get" onsubmit="return BuscarDer();">
+                    <p>
+                    <input type="text" value="Buscar"  name="txtBusqueda" class="buscador" onclick="if(this.value=='Buscar'){this.value=''}" />
+                    <input type="submit" value="" class="submit" />
+                </p>
+                </form>
+             </div>
+             <div id="content">
+                <a href="javascript:CargarIframeContenido('iframe_ComoComprar.asp');" class="demo tooltip" displayclass="notice" title="Para Comprar: vaya a su izquierda y en G�ndolas seleccione los productos de la lista."> <img border="0" src="../gfx/ban_comoComprar.jpg" width="200" height="39" style="margin-bottom:8px;"/></a>
+            </div>
+<img src="../gfx/inv.gif" width="9" height="47"><br>
+	 
+                          <a href="javascript:CargarIframeContenido('iframe_Registracion.asp');">
+                          <img border="0" src="../gfx/ban_registrese.jpg" width="200" height="77"  style="margin-bottom:8px"/></a>
+ 
+            
+		
+            
+
+            </div>
+			
+<!--<div id="divNavidad">
+			<a href="javascript:CargarIframeContenido('iframe_cajas_navidad.asp');"><img src="../gfx/ban_navidad.jpg" width="200" height="194" border="0" style="padding-bottom:8px;" /></a>
+</div>-->
+
+
+<!-- ALINA PIDIO SACAR EL BANNER DE NAVIDAD YAGUAR -->
+<!--
+			<a href="http://www.navidadyaguar.com.ar" target="_blank">
+<script type="text/javascript">
+AC_FL_RunContent( 'codebase','http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,28,0','width','149','height','150','src','../gfx/navidad_04_06','quality','high','pluginspage','http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash','movie','../gfx/navidad_04_06' ); //end AC code
+</script>
+noscript><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,28,0" width="149" height="150">
+  <param name="movie" value="../gfx/navidad_04_06.swf" />
+  <param name="quality" value="high" />
+  <embed src="../gfx/navidad_04_06.swf" quality="high" pluginspage="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="149" height="150"></embed>
+</object></noscript>
+			</a>
+
+<br />
+
+			<img src="../gfx/ban_incremente.jpg" width="200" height="124" border="0" style="margin-bottom:0px;"/></a>-->	
+
+						
+			<img src="../gfx/inv.gif" width="9" height="9">	
+
+
+			
+<img src="../gfx/procenex.png" width="200" height="180" border="0"   style="margin-bottom:8px;">
+<a href="javascript:CargarIframeContenido('iframe_ListadoDeProductosMarcas.asp?IdDepartamento=1&IdCategoria=4&tipoBusqueda=marcaPropia&txtBusqueda=san%20remo');"><img src="../gfx/ban_sanRemo.jpg" width="200" height="129" border="0"   style="margin-bottom:8px;"></a>
+
+            
+            <a href="javascript:CargarIframeContenido('iframe_ListadoDeProductosMarcas.asp?IdDepartamento=3&IdCategoria=9&tipoBusqueda=marcaPropia&txtBusqueda=myhogar');"><img src="../gfx/ban_myHogar.jpg" width="199" height="151" border="0"  style="margin-bottom:8px;"></a>
+            
+			<a href="javascript:CargarIframeContenido('iframe_ListadoDeProductosMarcas.asp?IdDepartamento=4&IdCategoria=14&tipoBusqueda=marcaPropia&txtBusqueda=kalindy');"><img src="../gfx/ban_kalindys.jpg" width="198" height="128" border="0" style="margin-bottom:8px; /></a>
+            
+            <a href="javascript:void(0);"onclick="onclick="setHomepage();"class="text""><img src="../gfx/ban_pagInicio.jpg" width="198" height="130" border="0" /></a>
+			</td>
+                        <td height="100%" width="9"><img src="../gfx/inv.gif" width="11" height="20"></td>
+                      </tr>
+                    </table>
+                    <img src="../gfx/inv.gif" width="9" height="9"></td>
+                </tr>
+              </table></td>
+     </tr>
+     <tr valign="top">
+      <td height="100%" colspan="3">&nbsp;</td>
+     </tr>
+    </table></td>
+  </tr>
+ </table>
+ 	</div>
+    <p class="pie"></p>    
+ </div>
+</div>
+    <div style="clear:both"><br>
+    <br>
+    </div>
+ <script type="text/javascript">
+	function Subir() {
+		parent.frames("frmMain").location.href = (parent.frames("frmMain").location.href + "#").replace("##","#");
+	}
+
+	function Volver() {
+		parent.frames("frmMain").history.go(-1);
+	}
+
+	function Buscar() {
+		//alert(parent.frames);
+	    //parent.frames("frmMain").CargarIframeContenido("iframe_ListadoDeProductos.asp?txtBusqueda="+frmBusqueda.txtBusqueda.value);
+		parent.CargarIframeContenido("iframe_ListadoDeProductos.asp?txtBusqueda="+frmBusqueda.txtBusqueda.value+'&tipoBusqueda=nombremarca');
+
+		return false;
+	}
+</script>
+
+<div class="Bottom">
+		<div class="Footer">
+            <form name="frmBusqueda" class="buscador" method="get" onsubmit="return Buscar();">
+                <p>
+                    <input type="text" value="Buscar"  name="txtBusqueda" class="buscador" onclick="if(this.value=='Buscar'){this.value=''}" />
+                    <input type="submit" value="" class="submit" />
+                </p>
+            </form>
+            <span><a href="http://amelie.yaguar.com.ar" target="_blank"><img src="../gfx/bg_webmail.jpg" width="35" height="28" border="0"></a></span>
+      		<p>Cajas Navide&ntilde;as:</p>
+            <h6><a href="http://www.navidadyaguar.com.ar/"><img src="../gfx/img_cajas_navidad.jpg" alt="Navidad Yaguar" border="0" style="padding-left:-20px" /></a></h6>
+            <h6><a href="javascript:CargarIframeContenido('iframe_datafiscal.asp');"><img src="../gfx/datafiscal.gif" alt="Data Fiscal AFIP" border="0" style="padding-left:15px" /></a></h6>
+            <h6><a href="http://www.jus.gov.ar/datos-personales.aspx/" target="_blank"><img src="../gfx/logopdp.gif" alt="Data Fiscal AFIP" border="0" style="padding-left:90px" /></a></h6>
+			<div style="width:100px">
+                    <p class="subir"><a href="javascript:window.scrollTo(0,0);">Subir</a></p>
+			</div>
+		</div>
+
+</div>
+<a href="javascript:CargarIframeContenido('loginEncuesta.asp#a')" ><img src="../gfx/enc.GIF" width="11" height="8" border="0"></a>
+</div>
+    
+
+</body>
+</html>
+
